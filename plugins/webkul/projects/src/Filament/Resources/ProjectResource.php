@@ -126,6 +126,7 @@ class ProjectResource extends Resource
                                     ->label(__('projects::filament/resources/project.form.sections.additional.fields.allocated-hours'))
                                     ->suffixIcon('heroicon-o-clock')
                                     ->minValue(0)
+                                    ->rules(['regex:/^\d+(\.\d{1,2})?$/'])
                                     ->helperText(__('projects::filament/resources/project.form.sections.additional.fields.allocated-hours-helper-text'))
                                     ->visible(fn (TimeSettings $timeSettings) => $timeSettings->enable_timesheets),
                                 Forms\Components\Select::make('tags')
